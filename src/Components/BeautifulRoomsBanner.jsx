@@ -1,21 +1,24 @@
 import { useState } from "react";
+import beau1 from '../assets/beau1.png'
+import beau2 from '../assets/beau2.png'
+import beau3 from '../assets/beau3.png'
 
 const slides = [
   {
     id: 1,
-    image: "../src/assets/beau1.png",
+    image:beau1,
     title: "Inner Peace",
     category: "Bed Room",
   },
   {
     id: 2,
-    image: "../src/assets/beau2.png",
+    image: beau2,
     title: "Cozy Living",
     category: "Living Room",
   },
   {
     id: 3,
-    image: "../src/assets/beau3.png",
+    image: beau3,
     title: "Minimalist Dream",
     category: "Dining Room",
   },

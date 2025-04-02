@@ -1,14 +1,16 @@
+import gal1 from "../assets/gal1.png";
+import gal2 from "../assets/gal2.png";
+import gal3 from "../assets/gal3.png";
+import gal4 from "../assets/gal4.png";
+import gal5 from "../assets/gal5.png";
+import gal6 from "../assets/gal6.png";
+import gal7 from "../assets/gal7.png";
+import gal8 from "../assets/gal8.png";
+
+const images = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8];
+
+
 export default function PhotoGallery() {
-    const images = [
-      "../src/assets/gal1.png",
-      "../src/assets/gal2.png",
-      "../src/assets/gal3.png",
-      "../src/assets/gal4.png",
-      "../src/assets/gal5.png",
-      "../src/assets/gal6.png",
-      "../src/assets/gal7.png",
-      "../src/assets/gal8.png",
-    ];
   
     return (
       <section className="py-12 bg-gray-100 text-center">
