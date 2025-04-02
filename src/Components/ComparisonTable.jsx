@@ -1,9 +1,10 @@
 import React from "react";
-
+import sofa1 from "../assets/asgard sofa.png"
+import sofa2 from  "../assets/outdoorsofa.png"
 const products = [
   {
     name: "Appasport Sofa",
-    image: "../assets/asgard sofa.png",
+    image:sofa1 ,
     rating: 4.5,
     general: {
       material: "1 seater sofa",
@@ -22,7 +23,7 @@ const products = [
   },
   {
     name: "Outdoor Sofa Set",
-    image: "../assets/outdoorsofa.png",
+    image:sofa2,
     rating: 4.7,
     general: {
       material: "1 three Seater, 1 Single",

@@ -1,4 +1,9 @@
 import React from "react";
+import blog1 from "../assets/blog1.jpg"
+import blog2 from "../assets/blog2.jpg"
+import blog3 from "../assets/blog3.jpg"
+
+
 
 const blogPosts = [
   {
@@ -6,7 +11,7 @@ const blogPosts = [
     title: "Going all-in with millennial design",
     date: "Jan 10, 2024",
     author: "Admin",
-    image: "../assets/blog1.jpg",
+    image: blog1,
     excerpt: "A deep dive into modern design trends that cater to millennials...",
   },
   {
@@ -14,7 +19,7 @@ const blogPosts = [
     title: "Exploring new ways of decorating",
     date: "Feb 05, 2024",
     author: "Admin",
-    image: "../assets/blog2.jpg",
+    image: blog2,
     excerpt: "Discover fresh interior decoration techniques that elevate any space...",
   },
   {
@@ -22,7 +27,7 @@ const blogPosts = [
     title: "Handmade pieces that took time to make",
     date: "Mar 15, 2024",
     author: "Admin",
-    image: "../assets/blog3.jpg",
+    image: blog3,
     excerpt: "Exploring the art of handmade crafts and their unique touch...",
   },
 ];
