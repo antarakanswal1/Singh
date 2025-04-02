@@ -16,7 +16,7 @@ const products = [
   { image: Shop5, title: "Grifo", description: "Night lamp", price: "Rp 1.500.000" },
   { image: Shop6, title: "Muggo", description: "Small mug", price: "Rp 150.000" },
   { image: Shop7, title: "Pingky", description: "Cute bed set", price: "Rp 7.000.000" },
-  { image: Shop8, title: "Potty", description: "Minimalist flower pot", price: "Rp 500.000" },
+  { image: Shop8, title: "Flower Pots", description: "Minimalist flower pot", price: "Rp 500.000" },
 ];
 
 const Products = () => {
