@@ -6,7 +6,7 @@ const blogPosts = [
     title: "Going all-in with millennial design",
     date: "Jan 10, 2024",
     author: "Admin",
-    image: "../src/assets/blog1.jpg",
+    image: "../assets/blog1.jpg",
     excerpt: "A deep dive into modern design trends that cater to millennials...",
   },
   {
@@ -14,7 +14,7 @@ const blogPosts = [
     title: "Exploring new ways of decorating",
     date: "Feb 05, 2024",
     author: "Admin",
-    image: "../src/assets/blog2.jpg",
+    image: "../assets/blog2.jpg",
     excerpt: "Discover fresh interior decoration techniques that elevate any space...",
   },
   {
@@ -22,7 +22,7 @@ const blogPosts = [
     title: "Handmade pieces that took time to make",
     date: "Mar 15, 2024",
     author: "Admin",
-    image: "../src/assets/blog3.jpg",
+    image: "../assets/blog3.jpg",
     excerpt: "Exploring the art of handmade crafts and their unique touch...",
   },
 ];

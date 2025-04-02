@@ -18,7 +18,7 @@ const CartTools = () => {
           <tbody>
             <tr className="border-b border-gray-200 flex-wrap">
               <td className="p-3 flex items-center space-x-3">
-                <img src="../src/assets/asgard sofa.png" alt="Asgaard sofa" className="w-16 h-16 rounded" />
+                <img src="../assets/asgard sofa.png" alt="Asgaard sofa" className="w-16 h-16 rounded" />
                 <span className="text-gray-600 text-xs sm:text-base">Asgaard sofa</span>
               </td>
               <td className="p-3 text-xs sm:text-base">Rs. 250,000.00</td>

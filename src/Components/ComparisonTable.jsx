@@ -3,7 +3,7 @@ import React from "react";
 const products = [
   {
     name: "Appasport Sofa",
-    image: "../src/assets/asgard sofa.png",
+    image: "../assets/asgard sofa.png",
     rating: 4.5,
     general: {
       material: "1 seater sofa",
@@ -22,7 +22,7 @@ const products = [
   },
   {
     name: "Outdoor Sofa Set",
-    image: "../src/assets/outdoorsofa.png",
+    image: "../assets/outdoorsofa.png",
     rating: 4.7,
     general: {
       material: "1 three Seater, 1 Single",
