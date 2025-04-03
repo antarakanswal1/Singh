@@ -1,7 +1,13 @@
-import React from 'react'; 
-import sofa1 from "../assets/asgard sofa.png"
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import sofa1 from "../assets/asgard sofa.png";
 
 const CartTools = () => {
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
       {/* Cart Items Section */}
@@ -17,7 +23,7 @@ const CartTools = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-200 flex-wrap">
+            <tr className="border-b border-gray-200 flex-wrap" data-aos="fade-up">
               <td className="p-3 flex items-center space-x-3">
                 <img src={sofa1} alt="Asgaard sofa" className="w-16 h-16 rounded" />
                 <span className="text-gray-600 text-xs sm:text-base">Asgaard sofa</span>
@@ -34,7 +40,7 @@ const CartTools = () => {
       </div>
       
       {/* Cart Totals Section */}
-      <div className="bg-[#f8f4f0] p-6 rounded-lg shadow-md w-full">
+      <div className="bg-[#f8f4f0] p-6 rounded-lg shadow-md w-full" data-aos="zoom-in">
         <h2 className="text-xl font-semibold">Cart Totals</h2>
         <div className="flex justify-between mt-4 text-sm sm:text-base">
           <span>Subtotal</span>
@@ -44,7 +50,10 @@ const CartTools = () => {
           <span>Total</span>
           <span className="text-gold">Rs. 250,000.00</span>
         </div>
-        <button className="mt-6 w-full py-2 border border-black rounded-lg text-lg font-semibold hover:bg-black hover:text-white transition">
+        <button 
+          className="mt-6 w-full py-2 border border-black rounded-lg text-lg font-semibold hover:bg-black hover:text-white transition"
+          data-aos="fade-up"
+        >
           Check Out
         </button>
       </div>

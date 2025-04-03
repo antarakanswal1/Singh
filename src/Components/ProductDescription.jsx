@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProductDescription = () => {
   const [activeTab, setActiveTab] = useState("description");
 
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
+
   return (
     <div className="container mx-auto p-6 md:p-12">
       {/* Tabs */}
-      <div className="flex space-x-6 border-b pb-2">
+      <div className="flex space-x-6 border-b pb-2" data-aos="fade-down">
         {[
           { label: "Description", key: "description" },
           { label: "Additional Information", key: "additional" },
@@ -27,7 +33,7 @@ const ProductDescription = () => {
       </div>
 
       {/* Content */}
-      <div className="mt-6 text-gray-600">
+      <div className="mt-6 text-gray-600" data-aos="fade-up">
         {activeTab === "description" && (
           <>
             <p>
@@ -52,14 +58,14 @@ const ProductDescription = () => {
 
       {/* Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-        <div className="bg-gray-100 p-4 rounded-lg">
+        <div className="bg-gray-100 p-4 rounded-lg" data-aos="zoom-in">
           <img
             src="../src/assets/cloudsofa.png"
             alt="Sofa Left"
             className="w-full h-auto rounded-lg"
           />
         </div>
-        <div className="bg-gray-100 p-4 rounded-lg">
+        <div className="bg-gray-100 p-4 rounded-lg" data-aos="zoom-in" data-aos-delay="200">
           <img
             src="../src/assets/cloudsofa.png"
             alt="Sofa Right"
