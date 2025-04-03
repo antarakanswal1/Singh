@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initializes AOS with 1s duration
+  }, []);
+
   return (
     <div className="container mx-auto p-6 md:p-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Contact Information */}
-        <div className="space-y-6">
+        <div className="space-y-6" data-aos="fade-right">
           <h2 className="text-2xl font-bold">Get In Touch With Us</h2>
           <p className="text-gray-500">
             For more information about our products & services, feel free to drop us an email.
@@ -29,24 +35,46 @@ const ContactSection = () => {
         </div>
 
         {/* Contact Form */}
-        <form className="bg-white shadow-lg rounded-lg p-6 space-y-4 w-full max-w-lg mx-auto">
+        <form 
+          className="bg-white shadow-lg rounded-lg p-6 space-y-4 w-full max-w-lg mx-auto"
+          data-aos="fade-left"
+        >
           <div>
             <label className="block text-gray-700 font-medium">Your Name</label>
-            <input type="text" className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" placeholder="Enter your name" />
+            <input 
+              type="text" 
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" 
+              placeholder="Enter your name" 
+            />
           </div>
           <div>
             <label className="block text-gray-700 font-medium">Email Address</label>
-            <input type="email" className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" placeholder="Enter your email" />
+            <input 
+              type="email" 
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" 
+              placeholder="Enter your email" 
+            />
           </div>
           <div>
             <label className="block text-gray-700 font-medium">Subject</label>
-            <input type="text" className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" placeholder="Optional" />
+            <input 
+              type="text" 
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" 
+              placeholder="Optional" 
+            />
           </div>
           <div>
             <label className="block text-gray-700 font-medium">Message</label>
-            <textarea className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" placeholder="Enter your message" rows="4"></textarea>
+            <textarea 
+              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" 
+              placeholder="Enter your message" 
+              rows="4"
+            ></textarea>
           </div>
-          <button className="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition">
+          <button 
+            className="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition"
+            data-aos="fade-up"
+          >
             Submit
           </button>
         </form>

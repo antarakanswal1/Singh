@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Shop1 from '../assets/shop1.png';
 import Shop2 from '../assets/shop2.png';
 import Shop3 from '../assets/shop3.png';
@@ -20,6 +22,10 @@ const products = [
 ];
 
 const Products = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <section className="py-8">
       <div className='h-[30px]'></div>
@@ -28,6 +34,8 @@ const Products = () => {
           <div 
             key={index} 
             className="max-w-sm rounded overflow-hidden shadow-lg relative group transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay={`${index * 100}`} // Staggered animation
           >
             {/* Image */}
             <img className="w-full h-48 object-cover" src={product.image} alt={product.title} />

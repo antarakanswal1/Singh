@@ -1,12 +1,14 @@
-import { useState } from "react";
-import beau1 from '../assets/beau1.png'
-import beau2 from '../assets/beau2.png'
-import beau3 from '../assets/beau3.png'
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import beau1 from '../assets/beau1.png';
+import beau2 from '../assets/beau2.png';
+import beau3 from '../assets/beau3.png';
 
 const slides = [
   {
     id: 1,
-    image:beau1,
+    image: beau1,
     title: "Inner Peace",
     category: "Bed Room",
   },
@@ -27,6 +29,10 @@ const slides = [
 export default function BeautifulRoomsBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   };
@@ -36,29 +42,35 @@ export default function BeautifulRoomsBanner() {
   };
 
   return (
-    <div className="bg-cream flex items-center justify-center py-12">
-      <div className="container flex flex-col md:flex-row items-center gap-8">
-        <div className="max-w-md">
+    <div className="bg-cream flex items-center justify-center py-12 px-6">
+      <div className="container flex flex-col md:flex-row items-center gap-8 mx-auto">
+        {/* Text Section */}
+        <div className="max-w-sm w-full text-center md:text-left" data-aos="fade-left">
           <h2 className="text-3xl font-bold text-gray-800">
             50+ Beautiful rooms inspiration
           </h2>
           <p className="text-gray-600 mt-2">
-            Our designer already made a lot of beautiful prototype rooms that
-            inspire you.
+            Our designer already made a lot of beautiful prototype rooms that inspire you.
           </p>
-          <button className="bg-yellow-700 text-white px-4 py-2 mt-4 shadow">
+          <button className="bg-yellow-700 text-white px-4 py-2 mt-4 shadow rounded-lg">
             Explore More
           </button>
         </div>
 
-        <div className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-lg">
+        {/* Image Slider Section */}
+        <div
+          className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-lg mx-auto"
+          data-aos="fade-right"
+        >
           <img
             src={slides[currentIndex].image}
             alt={slides[currentIndex].title}
             className="w-full h-96 object-cover"
           />
           <div className="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg shadow">
-            <span className="text-sm text-gray-500">{slides[currentIndex].category}</span>
+            <span className="text-sm text-gray-500">
+              {slides[currentIndex].category}
+            </span>
             <h3 className="text-lg font-semibold text-gray-800">
               {slides[currentIndex].title}
             </h3>
