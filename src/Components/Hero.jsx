@@ -21,7 +21,7 @@ const Hero = () => {
         <p className="text-xl uppercase text-black font-semibold tracking-wide">
           New Arrival
         </p>
-        <h1 className="text-5xl font-bold text-[#7D6228] leading-tight">
+        <h1 className="text-4xl font-bold text-[#7D6228] leading-tight">
           Discover Our <br /> New Collection
         </h1>
         <p className="text-gray-700 text-xl mt-3">
