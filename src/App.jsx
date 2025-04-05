@@ -12,6 +12,8 @@ import Contact from './Pages/Contact'
 import ProductComparison from './Pages/ProductComparison'
 import Shop from './Pages/Shop'
 import SingleProduct from './Pages/SingleProduct'
+import WishlistPage from "./Pages/WishlistPage"; 
+
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +26,7 @@ function App() {
     { path: "/productcomparison", element: <ProductComparison /> },
     { path: "/shop", element: <Shop /> },
     { path: "/singleproduct", element: <SingleProduct /> },
+    { path: "/wishlist", element: < WishlistPage/> },
   ])
 
   return <RouterProvider router={router} />

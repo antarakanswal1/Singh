@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // ← Add this
 import AOS from "aos";
 import "aos/dist/aos.css";
 import sofa1 from "../assets/asgard sofa.png";
@@ -46,9 +47,15 @@ const products = [
 ];
 
 const ComparisonTable = () => {
+  const navigate = useNavigate(); // ← Add this line
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const handleAddToCart = () => {
+    navigate("/cart"); // ← Navigate to cart page
+  };
 
   return (
     <div className="container mx-auto p-6 md:p-12">
@@ -56,7 +63,7 @@ const ComparisonTable = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6" data-aos="fade-up">
         <div className="text-center md:text-left">
           <h2 className="text-lg font-semibold">Go to Product Page for more Products</h2>
-          <a href="#" className="text-yellow-600 underline">Show More</a>
+          <a href="/cart" className="text-yellow-600 underline">Show More</a>
         </div>
         {products.map((product, index) => (
           <div key={index} className="text-center" data-aos="fade-up">
@@ -66,7 +73,7 @@ const ComparisonTable = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Specification Table */}
       <div className="bg-white shadow-lg rounded-lg p-6" data-aos="fade-right">
         {Object.keys(products[0].general).map((key, index) => (
@@ -77,7 +84,7 @@ const ComparisonTable = () => {
             ))}
           </div>
         ))}
-        
+
         {Object.keys(products[0].dimensions).map((key, index) => (
           <div key={index} className="grid grid-cols-1 md:grid-cols-3 p-4" data-aos="fade-left">
             <h4 className="font-semibold text-gray-700">{key.toUpperCase()}</h4>
@@ -86,7 +93,7 @@ const ComparisonTable = () => {
             ))}
           </div>
         ))}
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 p-4" data-aos="zoom-in">
           <h4 className="font-semibold text-gray-700">WARRANTY</h4>
           {products.map((product, i) => (
@@ -94,13 +101,14 @@ const ComparisonTable = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Add to Cart Buttons */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6" data-aos="fade-up">
         <div></div>
         {products.map((_, i) => (
           <button
             key={i}
+            onClick={handleAddToCart} // ← Attach handler here
             className="bg-[#B88E2F] text-white py-2 rounded-lg hover:bg-yellow-600 transition w-full"
           >
             ADD TO CART
