@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import dining from "../assets/dining.png";
@@ -24,39 +25,45 @@ const Banner = () => {
         {/* Image Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-            data-aos="fade-up"
-          >
-            <img src={dining} alt="Dining" className="w-full h-56 object-cover" />
-            <div className="py-3 text-center text-lg font-semibold text-gray-900">
-              Dining
+          <Link to="/cart">
+            <div
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+              data-aos="fade-up"
+            >
+              <img src={dining} alt="Dining" className="w-full h-56 object-cover" />
+              <div className="py-3 text-center text-lg font-semibold text-gray-900">
+                Dining
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 2 */}
-          <div
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img src={living} alt="Living" className="w-full h-56 object-cover" />
-            <div className="py-3 text-center text-lg font-semibold text-gray-900">
-              Living
+          <Link to="/cart">
+            <div
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img src={living} alt="Living" className="w-full h-56 object-cover" />
+              <div className="py-3 text-center text-lg font-semibold text-gray-900">
+                Living
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Card 3 */}
-          <div
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <img src={bedroom} alt="Bedroom" className="w-full h-56 object-cover" />
-            <div className="py-3 text-center text-lg font-semibold text-gray-900">
-              Bedroom
+          <Link to="/cart">
+            <div
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <img src={bedroom} alt="Bedroom" className="w-full h-56 object-cover" />
+              <div className="py-3 text-center text-lg font-semibold text-gray-900">
+                Bedroom
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

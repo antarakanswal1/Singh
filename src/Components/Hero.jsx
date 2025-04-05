@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import heroImage from "../assets/banner.jpg"; // Replace with your actual image path
@@ -28,9 +29,13 @@ const Hero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis.
         </p>
-        <button className="mt-5 bg-[#A87B2E] text-white py-2 px-6 rounded-lg shadow-md hover:bg-[#7D6228] transition-all">
-          BUY NOW
-        </button>
+
+        {/* Link to checkout page */}
+        <Link to="/checkout">
+          <button className="mt-5 bg-[#A87B2E] text-white py-2 px-6 rounded-lg shadow-md hover:bg-[#7D6228] transition-all">
+            BUY NOW
+          </button>
+        </Link>
       </div>
     </div>
   );

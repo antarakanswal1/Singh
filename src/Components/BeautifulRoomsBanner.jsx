@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import beau1 from '../assets/beau1.png';
@@ -42,31 +43,35 @@ export default function BeautifulRoomsBanner() {
   };
 
   return (
-    <div className="bg-cream flex items-center justify-center py-12 px-6">
-      <div className="container flex flex-col md:flex-row items-center gap-8 mx-auto">
+    <div className="bg-cream flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-center">
         {/* Text Section */}
-        <div className="max-w-sm w-full text-center md:text-left" data-aos="fade-left">
+        <div className="flex-1 w-full text-center md:text-left" data-aos="fade-left">
           <h2 className="text-3xl font-bold text-gray-800">
             50+ Beautiful rooms inspiration
           </h2>
           <p className="text-gray-600 mt-2">
             Our designer already made a lot of beautiful prototype rooms that inspire you.
           </p>
-          <button className="bg-yellow-700 text-white px-4 py-2 mt-4 shadow rounded-lg">
+          <button className="bg-yellow-700 text-white px-5 py-3 mt-4 shadow rounded-lg hover:bg-yellow-800 transition-all">
             Explore More
           </button>
         </div>
 
         {/* Image Slider Section */}
         <div
-          className="relative w-full max-w-lg overflow-hidden rounded-lg shadow-lg mx-auto"
+          className="flex-1 w-full relative overflow-hidden rounded-lg shadow-lg"
           data-aos="fade-right"
         >
-          <img
-            src={slides[currentIndex].image}
-            alt={slides[currentIndex].title}
-            className="w-full h-96 object-cover"
-          />
+          {/* Blog Link around the image */}
+          <Link to="/blog">
+            <img
+              src={slides[currentIndex].image}
+              alt={slides[currentIndex].title}
+              className="w-full h-80 sm:h-96 object-cover"
+            />
+          </Link>
+
           <div className="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg shadow">
             <span className="text-sm text-gray-500">
               {slides[currentIndex].category}
@@ -75,6 +80,8 @@ export default function BeautifulRoomsBanner() {
               {slides[currentIndex].title}
             </h3>
           </div>
+
+          {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
