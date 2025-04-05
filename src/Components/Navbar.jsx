@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import sofa1 from "../assets/asgard sofa.png";
 import sofa2 from "../assets/outdoorsofa.png";
@@ -7,6 +7,10 @@ import sofa2 from "../assets/outdoorsofa.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
 
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "Asgaard Sofa", price: 250000, image: sofa1, quantity: 1 },
@@ -18,6 +22,14 @@ const Navbar = () => {
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log("Searching for:", searchQuery);
+      // navigate(`/search?q=${searchQuery}`);
+    }
+  };
 
   return (
     <nav className="relative flex items-center justify-between px-6 py-2 bg-white shadow-md">
@@ -36,10 +48,35 @@ const Navbar = () => {
       </div>
 
       {/* Icons */}
-      <div className="flex items-center space-x-4 text-gray-700">
-        <i className="fa-solid fa-magnifying-glass cursor-pointer"></i>
+      <div className="flex items-center space-x-4 text-gray-700 relative">
+        {/* Search Icon */}
+        <div className="relative">
+          <i
+            className="fa-solid fa-magnifying-glass cursor-pointer"
+            onClick={() => setShowSearch(!showSearch)}
+          ></i>
 
-        {/* Heart (Wishlist) */}
+          {/* Search Input Dropdown */}
+          {showSearch && (
+            <form
+              onSubmit={handleSearch}
+              className="absolute right-0 mt-2 bg-white shadow-md border rounded-full flex items-center px-3 py-1 z-50"
+            >
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search..."
+                className="outline-none px-2 py-1 text-sm w-40"
+              />
+              <button type="submit">
+                <i className="fa-solid fa-arrow-right text-gray-600 ml-2"></i>
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* Wishlist */}
         <Link to="/wishlist">
           <i className="fa-solid fa-heart cursor-pointer"></i>
         </Link>
