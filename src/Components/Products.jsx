@@ -22,6 +22,21 @@ const products = [
   { image: Shop8, title: "Flower Pots", description: "Minimalist flower pot", price: "Rp 500.000" },
 ];
 
+// const express = require('express');
+// const router = express.Router();
+// const db = require('../db');
+
+// // GET all products
+// router.get('/', (req, res) => {
+//   const query = 'SELECT * FROM products';
+//   db.query(query, (err, results) => {
+//     if (err) return res.status(500).json(err);
+//     res.json(results);
+//   });
+// });
+
+// module.exports = router;
+
 const Products = () => {
   const navigate = useNavigate();
 

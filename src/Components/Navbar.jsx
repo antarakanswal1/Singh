@@ -35,7 +35,7 @@ const Navbar = () => {
     <nav className="relative flex items-center justify-between px-6 py-2 bg-white shadow-md">
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="Furniro Logo" className="w-14 h-14" />
+        <img src={logo} alt="Furniro Logo" className="w-16 h-16" />
         <h1 className="text-3xl font-bold">Furniro</h1>
       </div>
 
